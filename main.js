@@ -57,3 +57,178 @@ let data = [
 ]
 
 console.log(data);
+
+
+const queryone =document.getElementById('text')
+console.log(queryone,'hello')
+const querytwo =document.getElementsByTagName('h1')
+console.log(querytwo)
+const querythree =document.getElementsByClassName('box')
+console.log(querythree)
+document.querySelector('#heading').textContent="Hello world"
+
+function sum (){
+    console.log();
+} 
+
+
+
+//function
+let addition = (x,y) =>{
+    let p =x+y;
+    return p;
+}
+ console.log(addition(4,5));
+
+//arrow function
+let multiply = (x,y) =>{
+    let p =x*y;
+    return p;
+}
+ console.log(multiply(4,5));
+
+
+
+
+var x = 21;
+var girl = function () {
+    console.log(x);
+    var x = 20;
+};
+girl ();
+
+var x = 21;
+girl ();
+console.log(x)
+function girl() {
+    console.log(x);
+    var x = 20;
+};
+
+
+
+var x = 21;
+a();
+b();
+
+  function a() {
+    
+   x = 20;
+  console.log(x);
+};
+ function b() {
+    
+    x = 40;
+   console.log(x);
+};
+
+
+function  factorial (n){
+    let fact = 1;
+    for(let i=n;i>=1;i--){
+        fact*=i
+    }
+    return (fact);
+}
+console.log(factorial(3));
+
+
+//inheritance
+const parent ={
+    firstName:'riya',
+    lastName:'sharma',
+    name(){
+        return(this.firstName+" "+this.lastName)
+    }
+}
+const child={
+    __proto__:parent
+}
+console.log(child.name())
+
+
+//  let arr1 = [1, 2, 3, 4]
+//  let arr2 = [2, 3, 4, 5]
+//  let arr3 = [3, 4, 5, 6]
+
+//  const array ={
+//     add : function(arr){
+//         let sum = 0;
+//         for(let i=0; i<arr.length;i++);
+//         sum = sum + arr[i]
+//         console.log(sum)
+//     }
+   
+//  }
+//  array.__proto__=array;
+//  arr =[1,2,3,4];
+//  array.add(arr)
+ 
+
+// arr = [1,2,3,4,5,6];
+
+// const arraysum ={
+//   addAll:function(arr){
+//     let sum =0;
+//     for(let i=0;i<arr.length;i++){
+//         sum = sum+arr[i]
+//     }
+//     console.log(sum)
+// }
+// }
+
+// Array.__proto__=arraysum;
+// arraysum.addAll(arr);
+
+
+function person() {
+    this.name = 'John'
+}
+person.prototype.age = 23
+
+const person1 = new person();
+
+console.log(person1.name); // John
+console.log(person1.age); // 23
+
+
+var obj1 = {
+   name: "Areeb",
+    batch:17
+}
+let res = Object.keys(obj1)
+console.log(res)
+
+const mynum = (n)=>{
+    for (let i = 1; i <= n; i++) {
+        setTimeout( () =>{
+          console.log(i)
+        }, i * 1000)
+      }
+  }
+ mynum(7);
+
+
+
+function myfun(a){
+    console.log(a)
+    console.log('hello, world');
+}
+myfun("xyz")
+
+
+let printNumber =(time, num) =>{
+    return new promise ((resolve, reject)=>{
+        if (num){
+            setTimeout(()=>{
+                resolve(num());
+            },time)
+        }
+        else{
+            reject(console.log("failed"))
+        }
+    })
+}
+printNumber(0, () =>console.log("Passed")).then(()=>{
+    return printNumber(1000,() =>{console.log("1")})
+})

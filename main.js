@@ -67,13 +67,11 @@ const querythree =document.getElementsByClassName('box')
 console.log(querythree)
 document.querySelector('#heading').textContent="Hello world"
 
+//functions
 function sum (){
     console.log();
 } 
 
-
-
-//function
 let addition = (x,y) =>{
     let p =x+y;
     return p;
@@ -86,9 +84,6 @@ let multiply = (x,y) =>{
     return p;
 }
  console.log(multiply(4,5));
-
-
-
 
 var x = 21;
 var girl = function () {
@@ -192,11 +187,23 @@ console.log(person1.name); // John
 console.log(person1.age); // 23
 
 
-var obj1 = {
+//promises,async,await
+
+const oneperson =(friend, callback) => {
+    console.log(`Heyya.its${friend}`);
+    callback();
+}
+const secondperson = () =>{
+    console.log(`bye`)
+}
+oneperson("me",secondperson);
+ 
+
+const obj1 = {
    name: "Areeb",
     batch:17
 }
-let res = Object.keys(obj1)
+const res = Object.values(obj1)
 console.log(res)
 
 const mynum = (n)=>{
@@ -208,17 +215,42 @@ const mynum = (n)=>{
   }
  mynum(7);
 
+//callback hell
 
+ function calltime(){
+    setTimeout(()=>{
+        console.log("1");
+        setTimeout(()=>{
+            console.log("2");
+            setTimeout(()=>{
+                console.log("3");
+                setTimeout(()=>{
+                    console.log("4");
+                    setTimeout(()=>{
+                        console.log("5");
+                        setTimeout(()=>{
+                            console.log("6");
+                            setTimeout(()=>{
+                                console.log("7");
+                                 },7000)
+                            },6000)
+                        },5000)
+                    },4000)
+                },3000)
+            },2000)
+        },1000)
+ }
+ calltime()
 
-function myfun(a){
-    console.log(a)
-    console.log('hello, world');
-}
-myfun("xyz")
+// function myfun(a){
+//     console.log(a)
+//     console.log('hello, world');
+// }
+// myfun("xyz")
 
 
 let printNumber =(time, num) =>{
-    return new promise ((resolve, reject)=>{
+    return new Promise ((resolve, reject)=>{
         if (num){
             setTimeout(()=>{
                 resolve(num());
@@ -232,3 +264,44 @@ let printNumber =(time, num) =>{
 printNumber(0, () =>console.log("Passed")).then(()=>{
     return printNumber(1000,() =>{console.log("1")})
 })
+
+// let promise =(val1)=>{
+//     return new Promise ((resolve,reject)=>{
+//         if(val1==="yes"){
+//             resolve();
+//         }
+//         else{
+//             reject();
+//         }
+//     })
+//     promise("no",()=>{
+//         console.log("value is done")
+//     }).then(()=>{
+//             console.log("resolved")}).catch(()=>{
+//                 console.log("rejected");})
+
+            
+
+            // function renderCountry(imageSrc){
+            //     let countryDiv = document.querySelector(".country");
+            
+            //     let html = `<img src="${imageSrc}" height="100px" width="100px">`;
+            //     countryDiv.innerHTML+= html;
+            // }
+            
+            // const countryData = fetch(`https://restcountries.com/v3.1/name/india`).
+            //                     then(response => {
+            //                         console.log(response);
+            //                         if(!response.ok){
+            //                             throw new Error('Country not exists');
+            //                         }
+            //                         return response.json();}).
+            //                     then(data=> {
+            //                         console.log(data);
+            //                         renderCountry(data[0].flags.svg);
+            //                         const neighbour = data[0].borders[0];
+            //                         console.log(neighbour);
+            //                         // https://restcountries.com/v3.1/alpha/{code}
+            //                         return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+            //                     }).then(response => response.json()).
+                            

@@ -58,14 +58,40 @@ let data = [
 
 console.log(data);
 
+//dom
 
 const queryone =document.getElementById('text')
 console.log(queryone,'hello')
+
 const querytwo =document.getElementsByTagName('h1')
 console.log(querytwo)
+
 const querythree =document.getElementsByClassName('box')
 console.log(querythree)
-document.querySelector('#heading').textContent="Hello world"
+
+document.querySelector('h5').textContent="Hello world"
+
+document.querySelector('#btn').addEventListener('click', () => {
+   
+    if(document.querySelector('#flex').style.flexDirection == "row") {
+        document.querySelector('#flex').style.flexDirection = "column";
+    }
+
+    else {
+        document.querySelector('#flex').style.flexDirection = "row";
+    }
+})
+
+
+// 6
+
+document.querySelector('#heading').setAttribute("style", "background-color:red");
+
+// 7
+
+document.querySelector('#btn-para').addEventListener('click', () => {
+    document.querySelector('#para').textContent = "Welcome to Elevation academy"
+})
 
 //functions
 function sum (){

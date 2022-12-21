@@ -1,0 +1,22 @@
+#flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.div-me{
+    width: 15em;
+    height: 8em;
+    background-color: rgb(167, 50, 222);
+    border: 2px solid rgb(140, 4, 45);
+    margin-top: 1em;
+}
+
+#btn{
+    text-align: center;
+    width: 8em;
+    padding: 5px;
+    /* margin-left: 50%; */
+    margin-top: 2%;
+    /* transform: translate(-50%); */
+}

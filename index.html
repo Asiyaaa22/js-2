@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS-2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color:lightgoldenrodyellow">
     <center> <h1>ARRAY-OF-OBJECTS</h1>
@@ -94,10 +95,43 @@
 <pre>
     <h3>const querythree =document.getElementsByClassName('box') </h3></pre>
 //query-4
-<h5 id="heading">Hello</h5>
+<h5>Hello</h5>
 <pre>
-    <h3>document.querySelector('#heading').textContent="Hello world"</h3>
-    </pre>
+    <h3>document.querySelector('h5').textContent="Hello world"</h3>
+</pre>
+
+
+//query-5
+<h1>flex</h1>
+    <div id="flex">
+        <div class="div-me"></div>
+        <div class="div-me"></div>
+        <div class="div-me"></div>
+    </div>
+    <button id="btn">change FD</button>
+    <br>
+<pre>document.querySelector('#btn').addEventListener('click', () => {
+   
+    if(document.querySelector('#flex').style.flexDirection == "row") {
+        document.querySelector('#flex').style.flexDirection = "column";
+    }
+
+    else {
+        document.querySelector('#flex').style.flexDirection = "row";
+    }
+})
+</pre>
+//query-6
+<h1 id="heading">hello me</h1>
+<pre>document.querySelector('#heading').setAttribute("style", "background-color:red");
+</pre>
+//query-7
+<p id="para">HELLO WORLD</p>
+<button id="btn-para">press me</button>
+<pre>document.querySelector('#btn-para').addEventListener('click', () => {
+    document.querySelector('#para').textContent = "Welcome to Elevation academy"
+})
+</pre>
 
 </center>
 
